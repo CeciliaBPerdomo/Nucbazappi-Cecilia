@@ -6,7 +6,7 @@
 </p>
 
 # 🍕 Nucbazappi
-Nucbazappi es una aplicación web pensada para que los usuarios puedan realizar pedidos de comida online de forma rápida, cómoda y segura. Los usuarios registrados pueden llevar un historial de compras y acceder a sus pedidos anteriores fácilmente.
+**Nucbazappi** es una aplicación web pensada para que los usuarios puedan realizar pedidos de comida online de forma rápida, cómoda y segura. Los usuarios registrados pueden llevar un historial de compras y acceder a sus pedidos anteriores fácilmente.
 
 ## Tecnologías utilizadas
 - ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) 
@@ -25,7 +25,7 @@ Nucbazappi es una aplicación web pensada para que los usuarios puedan realizar 
 - Historial de pedidos por usuario
 
 ## Desarrollo
-- Hecho con 💙​ por <a href="https://www.linkedin.com/in/cecilia-perdomo/">Cecilia Perdomo</a>, desde el 29 de Julio de 2025
-- Github: <a href="https://github.com/CeciliaBPerdomo">https://github.com/CeciliaBPerdomo</a>
-- Repositorio: <a href="https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia">https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia</a>
-- Live versión: <a href="https://nucbazappi-cecilia.vercel.app/">en Vercel</a>
+- Hecho con 💙​ por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: black">Cecilia Perdomo</a>, desde el 29 de Julio de 2025
+- Github: <a href="https://github.com/CeciliaBPerdomo" style="text-decoration: none; color: black">https://github.com/CeciliaBPerdomo</a>
+- Repositorio: <a href="https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia" style="text-decoration: none; color: black">https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia</a>
+- Live versión: <a href="https://nucbazappi-cecilia.vercel.app/" style="text-decoration: none; color: black">en Vercel</a>
