@@ -4,18 +4,20 @@ import Button from '../UI/Button/Button';
 import { ProductosContainer } from './CardsProductosStyles';
 import { ButtonContainerStyled } from '../../pages/Home/HomeStyles';
 
+import { Products } from "../../data/Products"
+
 const CardsProductos = () => {
   return (
     <>
       <ProductosContainer>
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
+        {Object.entries(Products).map(([nombreCategories, foods]) => (
+          foods.map((product) => (
+            <CardProducto
+              {...product}
+              key={product.id}
+            />
+          ))
+        ))}
       </ProductosContainer>
 
       <ButtonContainerStyled>
