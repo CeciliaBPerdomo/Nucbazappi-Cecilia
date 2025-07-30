@@ -5,11 +5,15 @@
 >
 </p>
 
-🍕 Nucbazappi
+# 🍕 Nucbazappi
 Nucbazappi es una aplicación web pensada para que los usuarios puedan realizar pedidos de comida online de forma rápida, cómoda y segura. Los usuarios registrados pueden llevar un historial de compras y acceder a sus pedidos anteriores fácilmente.
 
-## Tecnologias utilizadas
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) | ![Styled Components](https://img.shields.io/badge/Styled--Components-DB7093?style=flat&logo=styled-components&logoColor=white) |
+## Tecnologías utilizadas
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) 
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) 
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) 
+- ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) 
+- ![Styled Components](https://img.shields.io/badge/Styled--Components-DB7093?style=flat&logo=styled-components&logoColor=white)
 
 
 ## ✨ Funcionalidades
@@ -19,3 +23,9 @@ Nucbazappi es una aplicación web pensada para que los usuarios puedan realizar 
 - Carrito de compras interactivo
 - Confirmación y gestión de pedidos
 - Historial de pedidos por usuario
+
+## Desarrollo
+- Hecho con 💙​ por <a href="https://www.linkedin.com/in/cecilia-perdomo/">Cecilia Perdomo</a>, desde el 29 de Julio de 2025
+- Github: <a href="https://github.com/CeciliaBPerdomo">https://github.com/CeciliaBPerdomo</a>
+- Repositorio: <a href="https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia">https://github.com/CeciliaBPerdomo/Nucbazappi-Cecilia</a>
+- Live versión: <a href="https://nucbazappi-cecilia.vercel.app/">en Vercel</a>
