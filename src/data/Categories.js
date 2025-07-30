@@ -1,4 +1,4 @@
-export const Categories = [
+export const categories = [
   {
     id: 1,
     img: 'https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648467/coding/NucbaZappi/Categorias/pizzas_unnxwp.png',
