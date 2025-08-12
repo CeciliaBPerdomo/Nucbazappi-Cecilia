@@ -7,15 +7,19 @@ import { ButtonContainerStyled } from '../../pages/Home/HomeStyles';
 // Redux
 import { useSelector } from 'react-redux';
 
-
 const CardsProductos = () => {
 
-  const Products = useSelector(state => state.products.products)
+  let products = useSelector(state => state.products.products)
+  const selectedCategory = useSelector(state => state.categories.selectedCategory)
+
+  if(selectedCategory) {
+    products = { [selectedCategory]: products[selectedCategory] }
+  }
 
   return (
     <>
       <ProductosContainer>
-        {Object.entries(Products).map(([, foods]) => (
+        {Object.entries(products).map(([, foods]) => (
           foods.map((product) => (
             <CardProducto
               {...product}

@@ -21,7 +21,8 @@
 ## ✨ Funcionalidades
 
 - Registro e inicio de sesión de usuarios
-- Visualización de menú con productos
+- Visualización de categorias y productos
+- Productos recomenandos
 - Carrito de compras interactivo
 - Confirmación y gestión de pedidos
 - Historial de pedidos por usuario
