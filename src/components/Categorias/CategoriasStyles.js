@@ -17,16 +17,18 @@ export const CardCategoria = styled(motion.div)`
   align-items: center;
   gap: 0.5rem;
 
-  width: 150px;
+  width: 120px;
   padding: 2rem 0.5rem;
 
-  background-color: ${({ selected }) =>
-    selected ? 'var(--orange-bg)' : 'var(--gray-bg)'};
+  background-color: ${({ selected }) => selected ? 'var(--orange-bg)' : 'var(--gray-bg)'};
+  
   border-radius: 15px;
   cursor: pointer;
 
   h2 {
     font-size: 1rem;
+    text-transform: capitalize;
+    text-align: center;
   }
 
   :first-child {

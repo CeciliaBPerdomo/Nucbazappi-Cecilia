@@ -23,7 +23,8 @@ const Hero = () => {
           <IconWrapperStyled>
             <AiOutlineSearch />
           </IconWrapperStyled>
-          <Button onClick={e => e.preventDefault()} radius='10' disabled='true'>
+          <Button 
+          onClick={e => e.preventDefault()} radius='10' disabled='true'>
             Buscar
           </Button>
         </HeroFormStyled>

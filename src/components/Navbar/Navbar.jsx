@@ -47,13 +47,15 @@ function Navbar() {
         </motion.div>
 
         <CartNavStyled>
-          <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
+          <CartIcon 
+          hiddenCart={hiddenCart} 
+          setHiddenCart={setHiddenCart} />
         </CartNavStyled>
 
         <UserNavStyled>
           <UserContainerStyled onClick={() => navigate('/register')}>
-            <SpanStyled>Inicia sesión</SpanStyled>
             <FaUserAlt />
+            <SpanStyled>Inicia sesión</SpanStyled>
           </UserContainerStyled>
         </UserNavStyled>
       </LinksContainerStyled>

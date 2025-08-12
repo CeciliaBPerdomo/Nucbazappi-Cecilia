@@ -1,11 +1,13 @@
+![CeciliaPerdomo](image.png)
+
+
+# 🍕 Nucbazappi
 <p align="center">
 <img 
     src="https://res.cloudinary.com/dcatzxqqf/image/upload/v1658797662/coding/NucbaZappi/Assets/pizza-hero_enjaeg_oprhww.png"
-    style="width: 25%"
->
+    style="width: 25%">
 </p>
 
-# 🍕 Nucbazappi
 **Nucbazappi** es una aplicación web pensada para que los usuarios puedan realizar pedidos de comida online de forma rápida, cómoda y segura. Los usuarios registrados pueden llevar un historial de compras y acceder a sus pedidos anteriores fácilmente.
 
 ## Tecnologías utilizadas
