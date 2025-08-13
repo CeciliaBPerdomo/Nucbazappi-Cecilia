@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCategory } from '../../redux/categories/categoriesSlice';
 
 export const Categoria = ({img, title, category}) => {
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const selectedCategory = useSelector((state)=> state.categories.selectedCategory)
 
   return (
