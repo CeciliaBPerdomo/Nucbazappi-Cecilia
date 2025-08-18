@@ -24,16 +24,22 @@ import {
   TitleStyled,
   TotalStyled,
 } from './ModalCartStyles';
-import { ModalOverlayStyled } from '../NavbarStyles';
 
-const ModalCart = ({ hiddenCart, setHiddenCart }) => {
+import { ModalOverlayStyled } from '../NavbarStyles';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleHiddenCart } from '../../../redux/cart/cartSlice';
+
+const ModalCart = () => {
+  const hiddenCart = useSelector(state => state.cart.hidden)
+const dispatch = useDispatch()
+
   const navigate = useNavigate();
 
   return (
     <>
       {!hiddenCart && (
         <ModalOverlayStyled
-          onClick={() => setHiddenCart(!hiddenCart)}
+          onClick={() => dispatch(toggleHiddenCart())}
           isHidden={hiddenCart}
         />
       )}
@@ -50,7 +56,7 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
               <CloseButtonStyled
                 className='close__modal '
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setHiddenCart(!hiddenCart)}
+                   onClick={() => dispatch(toggleHiddenCart())}
               >
                 <MdOutlineClose size='24px' />
               </CloseButtonStyled>

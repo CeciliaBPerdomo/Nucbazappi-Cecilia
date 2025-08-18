@@ -11,17 +11,20 @@ import categoriesReducer from "./categories/categoriesSlice"
 import productsReducer from "./products/productsSlice"
 // Recomendados
 import recommendedReducer from "./recommended/recommendedSlice"
+// Cart
+import cartReducer from "./cart/cartSlice"
 
 const reducers = combineReducers({
     categories: categoriesReducer,
     products: productsReducer,
     recommended: recommendedReducer, 
+    cart: cartReducer,
 })
 
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: [] // Lo que realmente quiero peristir
+    whitelist: ["cart"] // Lo que realmente quiero peristir
 }
 
 // Persiste la info, le paso la configuración y que quiero que persista.
