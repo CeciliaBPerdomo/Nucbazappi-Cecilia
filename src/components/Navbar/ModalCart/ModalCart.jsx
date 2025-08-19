@@ -27,13 +27,18 @@ import {
 
 import { ModalOverlayStyled } from '../NavbarStyles';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleHiddenCart } from '../../../redux/cart/cartSlice';
+import { clearCart, toggleHiddenCart } from '../../../redux/cart/cartSlice';
 
 const ModalCart = () => {
-  const hiddenCart = useSelector(state => state.cart.hidden)
-const dispatch = useDispatch()
-
+  const dispatch = useDispatch()
   const navigate = useNavigate();
+
+  const hiddenCart = useSelector(state => state.cart.hidden)
+  const { cartItems, shippingCost } = useSelector(state => state.cart)
+
+  const totalPrice = cartItems.reduce((acc, item) => {
+    return (acc += (item.price * item.quantity))
+  }, 0) // se inicializa en cero
 
   return (
     <>
@@ -56,7 +61,7 @@ const dispatch = useDispatch()
               <CloseButtonStyled
                 className='close__modal '
                 whileTap={{ scale: 0.95 }}
-                   onClick={() => dispatch(toggleHiddenCart())}
+                onClick={() => dispatch(toggleHiddenCart())}
               >
                 <MdOutlineClose size='24px' />
               </CloseButtonStyled>
@@ -65,36 +70,57 @@ const dispatch = useDispatch()
             <MainContainerStyled>
               <TitleStyled>
                 <h1>Tus Productos</h1>
+                {/* Vaciar el carrito */}
                 <Increase
-                  onClick={e => e.preventDefault()}
+                  onClick={() => dispatch(clearCart())}
                   bgColor='var(--magenta)'
-                  disabled='true'
+                  disabled={!cartItems.length}
                 >
                   <IoMdTrash />
                 </Increase>
               </TitleStyled>
 
               <ProductsWrapperStyled>
-                <ModalCartCard />
+                {/* Productos que hay en el carrito */}
+                {cartItems?.length ? (
+                  cartItems.map((item) => {
+                    return (
+                      <ModalCartCard
+                        key={item.id}
+                        {...item}
+                      />
+                    )
+                  })
+                ) : (
+                  <p>Dale amigo, compra algo</p>
+                )}
               </ProductsWrapperStyled>
             </MainContainerStyled>
 
             <PriceContainerStyled>
               <SubtotalStyled>
                 <p>Subtotal:</p>
-                <span>{formatPrice(9000)}</span>
+                <span>{formatPrice(totalPrice)}</span>
               </SubtotalStyled>
               <EnvioStyled>
                 <p>Envio</p>
-                <span>{formatPrice(500)}</span>
+                <span>{formatPrice(shippingCost)}</span>
               </EnvioStyled>
               <hr />
               <TotalStyled>
                 <p>Total:</p>
-                <PriceStyled>{formatPrice(9000 + 500)}</PriceStyled>
+                <PriceStyled>{formatPrice(totalPrice + shippingCost)}</PriceStyled>
               </TotalStyled>
               <ButtonContainerStyled>
-                <Submit onClick={() => navigate('/checkout')}>
+                <Submit onClick={() => {
+                  // navega
+                  navigate('/checkout')
+                  // oculta el carrito 
+                  dispatch(toggleHiddenCart())
+                }}
+                  // si no hay productos, boton desahabilitado
+                  disabled={!cartItems.length}
+                >
                   Iniciar pedido
                 </Submit>
               </ButtonContainerStyled>

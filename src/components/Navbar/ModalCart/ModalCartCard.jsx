@@ -3,6 +3,7 @@ import { formatPrice } from '../../../utils';
 
 import { BsPlusLg } from 'react-icons/bs';
 import { FaMinus } from 'react-icons/fa';
+import { IoMdTrash } from 'react-icons/io';
 
 import Count from '../../UI/Count/Count';
 import Increase from '../../UI/Increase/Increase';
@@ -15,28 +16,41 @@ import {
   PriceStyled,
   QuantityContainerStyled,
 } from './ModalCartStyles';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../../redux/cart/cartSlice';
 
-const ModalCartCard = () => {
+const ModalCartCard = ({ id, title, img, desc, price, quantity }) => {
+
+  const dispatch = useDispatch()
+
   return (
     <ProductContainerStyled>
       <img
-        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
-        alt='La Aco'
+        src={img}
+        alt={title}
       />
       <TextContainerStyled>
-        <CardTitleStyled>La Aco</CardTitleStyled>
-        <TextStyled>Cheta la gorra</TextStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <CardTitleStyled>{title}</CardTitleStyled>
+        <TextStyled>{desc}</TextStyled>
+        <PriceStyled>{formatPrice(price)}</PriceStyled>
       </TextContainerStyled>
       <QuantityContainerStyled>
+
+        {/* Menos */}
         <Increase
           bgColor='var(--btn-gradient-secondary)'
-          onClick={e => e.preventDefault()}
+          onClick={() => dispatch(removeFromCart(id))}
         >
-          <FaMinus />
+          {/* si es menor a uno muestra una papelera si no el menos */}
+          {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
+
         </Increase>
-        <Count>3</Count>
-        <Increase onClick={e => e.preventDefault()}>
+
+        {/* Cantidad */}
+        <Count>{quantity}</Count>
+
+        {/* Aumentar */}
+        <Increase onClick={() => dispatch(addToCart({ id, title, img, desc, price, quantity }))}>
           <BsPlusLg />
         </Increase>
       </QuantityContainerStyled>

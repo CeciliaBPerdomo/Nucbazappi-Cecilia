@@ -1,19 +1,22 @@
 import React from 'react';
 
 import { FaShoppingCart } from 'react-icons/fa';
-
 import { LinkContainerStyled } from './../NavbarStyles';
-import { useDispatch } from 'react-redux';
+
+
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleHiddenCart } from '../../../redux/cart/cartSlice';
 
 const CartIcon = () => {
-
   const dispatch = useDispatch()
+  const totalCartItems = useSelector((state)=> state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0) 
 
   return (
     <LinkContainerStyled onClick={() => dispatch(toggleHiddenCart())}>
+
       <FaShoppingCart />
-      <span>{3}</span>
+      <span>{totalCartItems}</span>
+
     </LinkContainerStyled>
   );
 };
