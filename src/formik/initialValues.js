@@ -4,3 +4,10 @@ export const checkoutInitialValues = {
     address: '',
     location: ''
 }
+
+export const registerInitialValue = {
+    name: "",
+    email: "",
+    password: "",
+}
+

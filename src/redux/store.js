@@ -13,18 +13,24 @@ import productsReducer from "./products/productsSlice"
 import recommendedReducer from "./recommended/recommendedSlice"
 // Cart
 import cartReducer from "./cart/cartSlice"
+// users
+import userReducer from "./user/userSlice"
+// orders
+import ordersReducer from "./orders/orderSlice"
 
 const reducers = combineReducers({
     categories: categoriesReducer,
     products: productsReducer,
-    recommended: recommendedReducer, 
+    recommended: recommendedReducer,
     cart: cartReducer,
+    user: userReducer,
+    orders: ordersReducer,
 })
 
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["cart"] // Lo que realmente quiero peristir
+    whitelist: ["cart", "user"] // Lo que realmente quiero peristir
 }
 
 // Persiste la info, le paso la configuración y que quiero que persista.
@@ -32,6 +38,10 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 
 export const store = configureStore({
     reducer: persistedReducer,
+    // para interactuar con la api externa
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false // redux no guardaba bien los datos serializable
+    })
 })
 
 
