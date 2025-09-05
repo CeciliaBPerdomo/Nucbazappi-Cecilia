@@ -14,3 +14,10 @@ export const registerValidationSchema = Yup.object({
         .min(6, "6 caracteres mínimo")
         .required("Campo requerido")
 })
+
+export const loginValidationSchema = Yup.object({
+    email: Yup.string().email("Email válido").required("Campo requerido"),
+    password: Yup.string()
+        .min(6, "6 caracteres mínimo")
+        .required("Campo requerido")
+})

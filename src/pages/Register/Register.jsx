@@ -16,10 +16,13 @@ import {
 import { createUser } from "../../axios/axios-user"
 import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/userSlice';
+import useRedirect from '../../hooks/useRedirect';
 
 const Register = () => {
 
   const dispatch = useDispatch()
+
+  useRedirect("/")
 
   return (
     <LoginContainerStyled>
